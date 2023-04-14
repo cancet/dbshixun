@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dbshixun.mapper.EmployeeMapper">
+    <select id="employeeList" resultType="com.example.dbshixun.pojo.Employee">
+        select * from employee
+    </select>
+
+    <select id="getEmployee" resultType="com.example.dbshixun.pojo.Employee">
+        select * from employee where EmployeeID =#{id}
+    </select>
+
+    <update id="updateEmployee" parameterType="com.example.dbshixun.pojo.Employee">
+        update employee set name=#{name},salary=#{salary},
+        AttendanceRecords=#{attendanceRecords},TrainingRecords=#{trainingRecords}
+        where employeeID =#{id}
+    </update>
+
+    <delete id="deleteEmployee" parameterType="int">
+        delete employee from employee where employeeID=#{id}
+    </delete>
+    
+    <select id="getAttendanceRecords" resultType="string">
+        select attendanceRecords from employee where employeeID=#{id}
+    </select>
+
+    <select id="getTrainingRecords" resultType="string">
+        select trainingRecords from employee where employeeId=#{id}
+    </select>
+</mapper>
