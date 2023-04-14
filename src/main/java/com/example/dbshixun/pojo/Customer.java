@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Customer {
-    private int id;
+    private int customerId;
     private String name;
     private String phone;
     private String email;
@@ -17,12 +17,12 @@ public class Customer {
     //消费习惯
     private String consumptionHabits;
 
-    public int getId() {
-        return id;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
     public String getName() {

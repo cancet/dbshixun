@@ -8,21 +8,21 @@
     </select>
 
     <select id="getCustomer" resultType="com.example.dbshixun.pojo.Customer">
-        select * from customer where id = #{id}
+        select * from customer where CustomerID = #{id}
     </select>
     <select id="addCustomer" resultType="string">
         insert into customer values(null,)
     </select>
 
     <delete id="deleteCustomer" parameterType="int">
-        delete from user where id = #{id}
+        delete from customer where CustomerID = #{id}
     </delete>
 
     <select id="getOrderHistory" resultType="string">
-        select OrderHistory from customer where id = #{id}
+        select OrderHistory from customer where CustomerID = #{id}
     </select>
 
     <select id="getConsumptionHabits" resultType="string">
-        select ConsumptionHabits from customer where id = #{id}
+        select ConsumptionHabits from customer where CustomerID = #{id}
     </select>
 </mapper>
