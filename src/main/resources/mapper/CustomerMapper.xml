@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dbshixun.mapper.CustomerMapper">
+    <select id="customerList" resultType="com.example.dbshixun.pojo.Customer">
+        select * from customer
+    </select>
+
+    <select id="getCustomer" resultType="com.example.dbshixun.pojo.Customer">
+        select * from customer where id = #{id}
+    </select>
+    <select id="addCustomer" resultType="string">
+        insert into customer values(null,)
+    </select>
+
+    <delete id="deleteCustomer" parameterType="int">
+        delete from user where id = #{id}
+    </delete>
+
+    <select id="getOrderHistory" resultType="string">
+        select OrderHistory from customer where id = #{id}
+    </select>
+
+    <select id="getConsumptionHabits" resultType="string">
+        select ConsumptionHabits from customer where id = #{id}
+    </select>
+</mapper>
