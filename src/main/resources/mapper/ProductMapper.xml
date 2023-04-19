@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper>
+    <select id="getMenu" resultType="com.example.dbshixun.pojo.Product">
+        select ProductId,ProductName,Price from Product
+    </select>
+    <select id="getSales" resultType="com.example.dbshixun.pojo.Product">
+        select ProductId,ProductName,SalesVolume from Product
+    </select>
+    <select id="productList" resultType="com.example.dbshixun.pojo.Product">
+        select * from product
+    </select>
+    <select id="addProduct" resultType="com.example.dbshixun.pojo.Product">
+        insert into product values(#{productId},#{productName},
+        #{productType},#{price},#{salesVolume})
+    </select>
+    <update id="addSales" parameterType="int">
+        update product set salesVolume= salesVolume+1
+        where productId=#{id}
+    </update>
+    <delete id="deleteProduct" parameterType="String">
+        delete from product where productId=#{id}
+    </delete>
+    <update id="updatePrice" parameterType="float">
+        update product set price=#{price} where productId=#{id}
+    </update>
+
+</mapper>

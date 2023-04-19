@@ -20,6 +20,7 @@
         where equipmentId=#{equipmentId}
     </update>
     <select id="addEquipment" resultType="com.example.dbshixun.pojo.Equipment">
-        insert equipment into equipment
+        insert into equipment values(#{ equipmentId},#{equipmentName}
+        #{maintenanceRecords},#{maintenancePlan})
     </select>
 </mapper>

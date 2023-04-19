@@ -30,6 +30,7 @@
     </select>
 
     <select id="addEmployee" resultType="string">
-        insert employee into employee
+        insert  into employee values(#{employeeid},
+        #{name},#{salary},#{attendanceRecords},#{trainingRecords})
     </select>
 </mapper>
