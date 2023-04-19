@@ -11,8 +11,10 @@ import java.util.List;
 public interface EmployeeMapper {
     List<Employee>employeeList();
     Employee getEmployee(int id);
-    void updateEmployee(Employee employee);
+    void updateEmployee(Employee employee );
     void deleteEmployee(int id);
     String getAttendanceRecords(int id);
     String getTrainingRecords(int id);
+
+    void addEmployee(Employee employee);
 }

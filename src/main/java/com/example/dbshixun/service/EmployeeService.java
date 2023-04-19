@@ -20,7 +20,9 @@ public class EmployeeService {
     public Employee getEmployee(int id){
         return employeeMapper.getEmployee(id);
     }
-
+    public void addEmployee(Employee employee){
+        employeeMapper.addEmployee(employee);
+    }
     public void updateEmployee(Employee employee){
         employeeMapper.updateEmployee(employee);
     }

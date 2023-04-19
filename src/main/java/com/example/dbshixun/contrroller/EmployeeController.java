@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/employee")
@@ -63,5 +63,16 @@ public class EmployeeController {
         Date date=new Date();
         employee.setAttendanceRecords(employee.getAttendanceRecords() + date.toString());
         updateEmployee(employee);
+    }
+
+    @RequestMapping("/addEmployee")
+    public String addEmployee(Employee employee){
+        try{
+            employeeService.addEmployee(employee);
+            return "success";
+        }catch (Exception e){
+            e.printStackTrace();
+            return "error";
+        }
     }
 }

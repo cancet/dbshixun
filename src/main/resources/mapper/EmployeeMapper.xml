@@ -28,4 +28,8 @@
     <select id="getTrainingRecords" resultType="string">
         select trainingRecords from employee where employeeId=#{id}
     </select>
+
+    <select id="addEmployee" resultType="string">
+        insert employee into employee
+    </select>
 </mapper>

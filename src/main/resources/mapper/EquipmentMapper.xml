@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper>
+    <select id="equipmentList" resultType="com.example.dbshixun.pojo.Equipment">
+        select * from equipment
+    </select>
+
+    <select id="getEquipment" resultType="com.example.dbshixun.pojo.Equipment">
+        select * from equipment where equipmentId=#{id}
+    </select>
+    <delete id="deleteEquipment" parameterType="int">
+        delete from equipment where equipmentId=#{id}
+    </delete>
+    <update id="updateEquipment" parameterType="int">
+        update equipment set equipmentName=#{equipmentName},
+        maintenanceRecords=#{maintenanceRecords},
+        maintenancePlan=#{maintenancePlan}
+        where equipmentId=#{equipmentId}
+    </update>
+    <select id="addEquipment" resultType="com.example.dbshixun.pojo.Equipment">
+        insert equipment into equipment
+    </select>
+</mapper>
