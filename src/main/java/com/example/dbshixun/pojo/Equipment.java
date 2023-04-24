@@ -1,5 +1,6 @@
 package com.example.dbshixun.pojo;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,10 +8,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Schema(description = "设备实体类")
 public class Equipment {
     private int equipmentId;
     private String equipmentName;
+    @Schema(description = "保养记录")
     private String maintenanceRecords;
+    @Schema(description = "保养计划")
     private String maintenancePlan;
 
     public int getEquipmentId() {
