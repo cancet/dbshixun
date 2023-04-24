@@ -8,7 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-
+/**
+ * @ClassName CustomerController
+ * @author cancet
+ * @Date 2023/4/14
+ * @Description 顾客表的控制层
+ */
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {
