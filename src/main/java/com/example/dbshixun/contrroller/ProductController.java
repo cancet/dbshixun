@@ -41,7 +41,7 @@ public class ProductController {
     public String addProduct(Product product){
         try{
             productService.addProduct(product);
-            return "201";
+            return "200";
         }catch (Exception e){
             e.printStackTrace();
             return "400";

@@ -32,6 +32,7 @@ public class SwaggerConfig {
                 .version("1.0.0")
                 .contact(new Contact()
                         .name("cancet")
+                        .url("https://github.com/cancet")
                         .email("1063471378@qq.com")
                 )
                 .license(new License()

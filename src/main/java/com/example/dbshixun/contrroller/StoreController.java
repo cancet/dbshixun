@@ -46,7 +46,7 @@ public class StoreController {
             }
         }else {
             System.out.println("商店已存在");
-            return "409";
+            return "400";
         }
     }
     @DeleteMapping("/deleteStore/{id}")

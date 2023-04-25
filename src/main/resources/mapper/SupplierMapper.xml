@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dbshixun.mapper.SupplierMapper">
+    <select id="suppliers" resultType="com.example.dbshixun.pojo.Supplier">
+        select * from supplier
+    </select>
+    <select id="getSupplier" resultType="com.example.dbshixun.pojo.Supplier">
+        select * from supplier where supplierId=#{id}
+    </select>
+    <delete id="deleteSupplier" parameterType="int">
+        delete from supplier where supplierId =#{id}
+    </delete>
+
+    <insert id="insertSupplier" parameterType="com.example.dbshixun.pojo.Supplier">
+        insert into supplier values(
+        supplierName=#{supplierName},
+        productId=#{productId},
+        productName=#{productName},
+        price=#{price},
+        qualityInspectionRecords=#{qualityInspectionRecords},
+        supplierId=#{supplierId})
+    </insert>
+</mapper>

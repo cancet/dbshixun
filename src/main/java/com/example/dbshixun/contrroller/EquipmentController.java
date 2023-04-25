@@ -49,7 +49,7 @@ public class EquipmentController {
     public String deleteEquipment(@PathVariable int id){
         try{
             equipmentService.deleteEquipment(id);
-            return "204";
+            return "200";
         }catch (Exception e){
             e.printStackTrace();
             return "404";
@@ -62,7 +62,7 @@ public class EquipmentController {
             Equipment equipment1 =equipmentService.getEquipment(id);
             if(equipment1!=null){
                 equipmentService.updateEquipment(equipment);
-                return "201";
+                return "200";
             }else{
                 return "404";
             }
