@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dbshixun.mapper.StoreMapper">
+    <select id="stores" resultType="com.example.dbshixun.pojo.Store">
+        select * from store
+    </select>
+    <insert id="addStore" parameterType="com.example.dbshixun.pojo.Store">
+        insert into store values(#{storeId},#{storeName},
+        #{location},#{leaseContract},#{propertyManagement})
+    </insert>
+    <select id="getStore" resultType="com.example.dbshixun.pojo.Store">
+        select * from store where storeId=#{id}
+    </select>
+    <update id="updateStore" parameterType="com.example.dbshixun.pojo.Store">
+        update store set    storeName=#{storeName},
+                            location=#{location},
+                            leaseContract=#{leaseContract},
+                            propertyManagement=#{propertyManagement}
+        where storeId=#{storeId}
+    </update>
+    <delete id="deleteStore" parameterType="int">
+        delete from store where storeId=#{id}
+    </delete>
+
+</mapper>

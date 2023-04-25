@@ -18,7 +18,7 @@
     </update>
 
     <delete id="deleteEmployee" parameterType="int">
-        delete employee from employee where employeeID=#{id}
+        delete from employee where employeeID=#{id}
     </delete>
     
     <select id="getAttendanceRecords" resultType="string">
