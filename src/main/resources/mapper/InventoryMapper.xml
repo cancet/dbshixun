@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dbshixun.mapper.FinanceMapper">
+    <select id="inventories" resultType="com.example.dbshixun.pojo.Inventory">
+        select * from inventory
+    </select>
+    <select id="getInventory" resultType="com.example.dbshixun.pojo.Inventory">
+        select * from inventory where productId=#{productId}
+    </select>
+    <delete id="deleteInventory" parameterType="int">
+        delete from inventory where productId=#{productId}
+    </delete>
+    <update id="updateInventory" parameterType="com.example.dbshixun.pojo.Inventory">
+        update inventory set
+        productName=#{productName},
+        StockQuantity=#{StockQuantity},
+        PurchaseRecords=#{PurchaseRecords},
+        DamageRecords=#{DamageRecords}
+        where productId=#{productId}
+    </update>
+    <insert id="addInventory" parameterType="com.example.dbshixun.pojo.Inventory">
+        insert into inventory values(
+        productId=#{productId},
+        productName=#{productName},
+        StockQuantity=#{StockQuantity},
+        PurchaseRecords=#{PurchaseRecords},
+        DamageRecords=#{DamageRecords}
+        where productId=#{productId})
+    </insert>
+</mapper>

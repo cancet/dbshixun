@@ -14,10 +14,11 @@
         select * from store where storeId=#{id}
     </select>
     <update id="updateStore" parameterType="com.example.dbshixun.pojo.Store">
-        update store set    storeName=#{storeName},
-                            location=#{location},
-                            leaseContract=#{leaseContract},
-                            propertyManagement=#{propertyManagement}
+        update store set
+        storeName=#{storeName},
+        location=#{location},
+        leaseContract=#{leaseContract},
+        propertyManagement=#{propertyManagement}
         where storeId=#{storeId}
     </update>
     <delete id="deleteStore" parameterType="int">
