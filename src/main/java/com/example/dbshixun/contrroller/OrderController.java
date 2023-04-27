@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * @ClassName OrderController
+ * @ClassName  OrderController
  * @author cancet
  * @Date 2023/4/26
  * @Description 订单表的控制层
@@ -27,14 +27,14 @@ public class OrderController {
     public List<Order>orders(){
         return orderService.orders();
     }
-    @GetMapping("/getOrder")
+    @GetMapping("/getOrder/{orderId}")
     @Operation(summary = "查询订单",description = "返回要寻找的订单信息")
-    public Order getOrder(int orderId){
+    public Order getOrder(@PathVariable int orderId){
         return orderService.getOrder(orderId);
     }
     @PostMapping("/addOrder")
     @Operation(summary = "添加订单",description = "向表中添加一个新的订单信息")
-    public String addOrder(Order order){
+    public String addOrder(@RequestBody Order order){
         if(orderService.getOrder(order.getOrderId())==null){
             try{
                 orderService.addOrder(order);
@@ -48,7 +48,7 @@ public class OrderController {
             return "400";
         }
     }
-    @DeleteMapping("/deleteOrder/{id}")
+    @DeleteMapping("/deleteOrder/{orderId}")
     @Operation(summary = "取消订单",description = "删除该订单信息")
     public String deleteOrder(@PathVariable int orderId) {
         if (orderService.getOrder(orderId) != null) {
@@ -67,7 +67,7 @@ public class OrderController {
     }
     @PutMapping("/updateOrder")
     @Operation(summary = "修改订单",description = "修改订单信息")
-    public String updateOrder(Order order){
+    public String updateOrder(@RequestBody Order order){
         if(orderService.getOrder(order.getOrderId())!=null){
             try{
                 orderService.updateOrder(order);
