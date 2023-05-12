@@ -15,4 +15,5 @@ public interface FinanceMapper {
     double getTotalExpense();
     double getTotalRevenue();
     double getPeriodProfit(Date startDate,Date endDate);
+    void updateFinance(Finance finance);
 }
